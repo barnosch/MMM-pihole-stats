@@ -63,7 +63,7 @@ Module.register('MMM-pihole-stats', {
 
 		let header = document.createElement('div');
 		header.className = 'small bright';
-		header.innerHTML = this.formatInt(this.ads_blocked_today) + ' ads blocked today. (' + this.formatFloat(this.ads_percentage_today) + '%)';
+		header.innerHTML = this.formatFloat(this.ads_blocked_today) + ' ads blocked today. (' + this.formatFloat(this.ads_percentage_today) + '%)';
 		wrapper.appendChild(header);
 
 		if (this.top_sources && Object.keys(this.top_sources).length) {
@@ -103,14 +103,14 @@ Module.register('MMM-pihole-stats', {
 				row.appendChild(sourceCell);
 
 				let countCell = document.createElement('td');
-				countCell.innerHTML = this.formatInt(adCount);
+				countCell.innerHTML = this.formatFloat(adCount);
 				row.appendChild(countCell);
 			}
 		}
 
 		let footer = document.createElement('div')
 		footer.className = 'xsmall';
-		footer.innerHTML = this.formatInt(this.dns_queries_today) + ' DNS queries, ' + this.formatInt(this.domains_being_blocked) + ' domains blacklisted.'
+		footer.innerHTML = this.formatFloat(this.dns_queries_today) + ' DNS queries, ' + this.formatFloat(this.domains_being_blocked) + ' domains blacklisted.'
 		wrapper.appendChild(footer);
 
 		return wrapper;
